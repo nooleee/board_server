@@ -1,4 +1,4 @@
-package boardServer.user;
+package boardServer.user.module;
 
 import java.security.Timestamp;
 import java.sql.Connection;

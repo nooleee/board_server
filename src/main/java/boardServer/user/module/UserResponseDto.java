@@ -1,9 +1,8 @@
-package boardServer.user;
+package boardServer.user.module;
 
-public class UserRequestDto {
+public class UserResponseDto {
 	
 	private String id;
-	private String password;
 	private String email;
 	private String name;
 	private String birth;
@@ -13,28 +12,10 @@ public class UserRequestDto {
 	private String phone;
 	private boolean agree;
 	
-	public UserRequestDto() {
-		
-	}
-	
-	public UserRequestDto(String id, String password, String name, String birth, String gender, String country,
-			String telecom, String phone, String agree) {
+	public UserResponseDto(String id, String email, String name, String birth, String gender, String country,
+			String telecom, String phone, boolean agree) {
 		super();
 		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.birth = birth;
-		this.gender = gender;
-		this.country = country;
-		this.telecom = telecom;
-		this.phone = phone;
-		this.agree = agree.equals("on") ? true : false;
-	}
-	public UserRequestDto(String id, String password, String email, String name, String birth, String gender,
-			String country, String telecom, String phone, String agree) {
-		super();
-		this.id = id;
-		this.password = password;
 		this.email = email;
 		this.name = name;
 		this.birth = birth;
@@ -42,20 +23,47 @@ public class UserRequestDto {
 		this.country = country;
 		this.telecom = telecom;
 		this.phone = phone;
-		this.agree = agree.equals("on") ? true : false;
+		this.agree = agree;
 	}
+	public UserResponseDto(String id, String password, String email, String name, String birth, String gender,
+			String country, String telecom, String phone, boolean agree) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.name = name;
+		this.birth = birth;
+		this.gender = gender;
+		this.country = country;
+		this.telecom = telecom;
+		this.phone = phone;
+		this.agree = agree;
+	}
+	
+	public UserResponseDto(User user) {
+		this.id = user.getId();
+		this.email = user.getEmail();
+		this.name = user.getName();
+		this.birth = user.getBirth();
+		this.gender = user.getGender();
+		this.country = user.getCountry();
+		this.telecom = user.getTelecom();
+		this.phone = user.getPhone();
+		this.agree = user.isAgree();
+	}
+	
+	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+//	public String getPassword() {
+//		return password;
+//	}
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
 	public String getEmail() {
 		return email;
 	}
@@ -105,9 +113,5 @@ public class UserRequestDto {
 		this.agree = agree;
 	}
 	
-	@Override
-	public String toString() {
-		return String.format("%d/%d/%d", this.id, this.name, this.email);
-	}
 	
 }
