@@ -1,7 +1,7 @@
 
-<%@page import="boardServer.user.UserResponseDto"%>
+<%@page import="boardServer.user.module.UserResponseDto"%>
 <%@page import="java.util.List"%>
-<%@page import="boardServer.user.UserDao"%>
+<%@page import="boardServer.user.module.UserDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>

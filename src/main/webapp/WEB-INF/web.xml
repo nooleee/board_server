@@ -17,7 +17,7 @@
   </servlet>
   <servlet-mapping>
    		<servlet-name>deleteUserAction</servlet-name>
-   		<url-pattern>/deleteUser</url-pattern>
+   		<url-pattern>/deleteUserAction</url-pattern>
    </servlet-mapping>
    
    
