@@ -10,6 +10,58 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <!-- Servlet mapping -->
+  <servlet>
+  		<servlet-name>deleteUserAction</servlet-name>
+  		<servlet-class>boardServer.user.controller.DeleteUserFormAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   		<servlet-name>deleteUserAction</servlet-name>
+   		<url-pattern>/deleteUser</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet>
+  		<servlet-name>joinFormAction</servlet-name>
+  		<servlet-class>boardServer.user.controller.JoinFormAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   		<servlet-name>joinFormAction</servlet-name>
+   		<url-pattern>/joinFormAction</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet>
+  		<servlet-name>loginFormAction</servlet-name>
+  		<servlet-class>boardServer.user.controller.LoginFormAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   		<servlet-name>loginFormAction</servlet-name>
+   		<url-pattern>/loginFormAction</url-pattern>
+   </servlet-mapping>
+   
+   
+   <servlet>
+  		<servlet-name>logoutAction</servlet-name>
+  		<servlet-class>boardServer.user.controller.LogoutAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   		<servlet-name>logoutAction</servlet-name>
+   		<url-pattern>/logout</url-pattern>
+   </servlet-mapping>
+   
+   
+  <servlet>
+  		<servlet-name>updateUserFormAction</servlet-name>
+  		<servlet-class>boardServer.user.controller.UpdateUserFromAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   		<servlet-name>updateUserFormAction</servlet-name>
+   		<url-pattern>/updateUserFormAction</url-pattern>
+   </servlet-mapping>
+  
+  
+  <!-- JSP files mapping -->
   <servlet>
    		<servlet-name>joinForm</servlet-name>
    		<jsp-file>/views/user/joinForm.jsp</jsp-file>
@@ -21,15 +73,6 @@
    </servlet-mapping>
    
    
-     <servlet>
-   		<servlet-name>joinFormPro</servlet-name>
-   		<jsp-file>/views/user/joinFormPro.jsp</jsp-file>
-   </servlet>  
-   <servlet-mapping>
-   		<servlet-name>joinFormPro</servlet-name>
-   		<url-pattern>/joinFormPro</url-pattern>
-   </servlet-mapping>
-   
    <servlet>
    		<servlet-name>login</servlet-name>
    		<jsp-file>/views/user/loginForm.jsp</jsp-file>
@@ -39,14 +82,6 @@
    		<url-pattern>/login</url-pattern>
    </servlet-mapping>
    
-   <servlet>
-   		<servlet-name>loginPro</servlet-name>
-   		<jsp-file>/views/user/loginFormPro.jsp</jsp-file>
-   </servlet>
-     <servlet-mapping>
-   		<servlet-name>loginPro</servlet-name>
-   		<url-pattern>/loginPro</url-pattern>
-   </servlet-mapping>
    
    <servlet>
    		<servlet-name>mypage</servlet-name>
@@ -87,16 +122,6 @@
    		<servlet-name>updateUserForm</servlet-name>
    		<url-pattern>/updateUser</url-pattern>
    </servlet-mapping>
-   
-      <servlet>
-   		<servlet-name>updateUserFormPro</servlet-name>
-   		<jsp-file>/views/user/updateUserFormPro.jsp</jsp-file>
-   </servlet>
-   
-   <servlet-mapping>
-   		<servlet-name>updateUserFormPro</servlet-name>
-   		<url-pattern>/updateUserPro</url-pattern>
-   </servlet-mapping>
   
   
    <servlet>
@@ -109,15 +134,6 @@
    		<url-pattern>/deleteUser</url-pattern>
    </servlet-mapping>
    
-   
-      <servlet>
-   		<servlet-name>deleteUserPro</servlet-name>
-   		<jsp-file>/views/user/deleteUserPro.jsp</jsp-file>
-   </servlet>
-   
-   <servlet-mapping>
-   		<servlet-name>deleteUserPro</servlet-name>
-   		<url-pattern>/deleteUserPro</url-pattern>
-   </servlet-mapping>
+
   
 </web-app>
