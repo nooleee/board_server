@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,17 +7,16 @@
 <link rel="stylesheet" href="./resources/style/form.css">
 </head>
 <script src="/resources/script/validation-updateUserPro.js"></script>
-<jsp:include page="/header"></jsp:include>
+<c:import url="/header" />
 <body>
-	<%
-	if(session.getAttribute("user") == null) {
-		response.sendRedirect("/login");
-	}
-	%>
+	<c:if test="${empty user}">
+		<c:redirect url="/login" />
+	</c:if>
+	
 	
 	<section id="root">
 		<h2>회원정보 수정</h2>
-		<form method="POST" action="/updateUserPro">
+		<form method="POST" action="/updateUserFormAction">
 			<div>
 				<input type="text" id="id" name="id" value="${user.id}" disabled>
 				<input type="password" id="password" name="password" placeholder="비밀번호">
@@ -75,5 +74,5 @@
 		</form>
 	</section>
 </body>
-<jsp:include page="/footer"></jsp:include>
+<c:import url="/footer" />
 </html>
